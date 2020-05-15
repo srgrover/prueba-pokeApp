@@ -1,0 +1,23 @@
+.box-primary{
+    background-color: #dedede;
+    padding: 2em;
+}
+
+.box-primary form{
+    width: 100%;
+}
+
+.box-primary form input, .box-primary form select{
+    background-color: #dedede;
+    border: 0;
+    border-right: 1px solid grey;
+    margin: 0 .5em;
+}
+
+.save{
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 1em 2em;
+    cursor: pointer;
+}

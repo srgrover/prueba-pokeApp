@@ -1,0 +1,14 @@
+<a [routerLink]="['/']">volver</a>
+<h3>Nueva entrada</h3>
+<h5>Pokemon</h5>
+<div class="box-primary">
+    <form [formGroup]="pokeForm" (ngSubmit)="guardarCambios()" novalidate="">
+        <input class="form-control" type="text" placeholder="Nombre" formControlName="name">
+        <input class="form-control" type="number" placeholder="Peso" formControlName="weight">
+        <select class="form-control" name="types" formControlName="type">
+            <option *ngFor="let type of types" value="{{type.url}}">{{type.name}}</option>
+        </select>
+        <input class="form-control" type="text" placeholder="Url Image" formControlName="image">
+        <button type="submit" class="save">Guardar</button>
+    </form>
+</div>

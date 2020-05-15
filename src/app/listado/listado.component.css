@@ -1,0 +1,19 @@
+.box-primary{
+    background-color: #dedede;
+    padding: 2em;
+}
+
+table tbody tr{
+    background-color: white;
+    margin: .2em 0;
+    border-top: .3em solid #dedede;
+    border-bottom: .3em solid #dedede;
+}
+
+.btn-form{
+    background-color: cadetblue;
+    border: none;
+    color: white;
+    padding: 1em 2em;
+    cursor: pointer;
+}

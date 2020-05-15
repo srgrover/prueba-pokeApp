@@ -1,0 +1,33 @@
+<h3>Listado de pokemon</h3>
+
+
+<select name="types" [(ngModel)]="selectTypes" (change)="getPokemonsByType(selectTypes)">
+    <option value="0">Seleccione un tipo</option>
+    <option *ngFor="let type of types" value="{{type.url}}">{{type.name}}</option>
+</select>
+
+<button class="btn-form" [routerLink]="['/formulario']">Nuevo Pokemon</button>
+<div class="box-primary">
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Peso</th>
+            <th>Imagen</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let myPokemon of myPokemons" class="white">
+                <td *ngIf="myPokemon.type == selectTypes">{{myPokemon.name}}</td>
+                <td *ngIf="myPokemon.type == selectTypes">{{myPokemon.weight}}</td>
+                <td *ngIf="myPokemon.type == selectTypes">
+                    <img *ngIf="myPokemon.image" src="{{myPokemon.image}}" alt="">
+                    <span *ngIf="!myPokemon.image">No hay imagen disponible</span>
+                </td>
+            </tr>
+            <tr *ngFor="let pokemon of pokemonsDetails">
+                <td>{{pokemon.name}}</td>
+                <td>{{pokemon.weight}}</td>
+                <td><img src="{{pokemon.sprites.front_default}}" alt=""></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

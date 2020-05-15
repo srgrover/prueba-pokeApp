@@ -1,3 +1,4 @@
+import { Pokemon } from './../Models/pokemon';
 import { PokeApiService } from './../services/poke-api.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -28,7 +29,8 @@ export class FormularioComponent implements OnInit {
   }
 
   guardarCambios() {
-    this.myPokemons.push(this.pokeForm.value);
+    const pokemon: Pokemon = this.pokeForm.value;
+    this.myPokemons.push(pokemon);
     localStorage.setItem("myPokemons", JSON.stringify(this.myPokemons));
     this.resetForm(this.pokeForm);
   }
